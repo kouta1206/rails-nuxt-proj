@@ -14,7 +14,8 @@ class V1::UsersController < ApplicationController
     end
   end
 
-private
+  # 中略
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :uid)

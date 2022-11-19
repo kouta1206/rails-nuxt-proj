@@ -20,6 +20,8 @@
         todos: [],
       };
     },
+    created() {
+    },
     methods: {
       async addTodo(title) {
         await axios.post("/v1/todos", { title });
