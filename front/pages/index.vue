@@ -2,6 +2,9 @@
   <div>
     <AddTodo @submit="addTodo" />
     <TodoList :todos="todos" />
+    <div v-if="user">
+      {{ user.name }}
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,13 @@
         todos: [],
       };
     },
+    computed: {
+      user() {
+        return this.$store.state.auth.currentUser;
+      }
+    },
     created() {
+      console.log(this.$store.state.auth.currentUser);
     },
     methods: {
       async addTodo(title) {

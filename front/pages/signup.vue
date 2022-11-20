@@ -49,7 +49,6 @@ export default {
     async signup() {
       if (this.password !== this.passwordConfirm) {
         this.error = "※パスワードとパスワード確認が一致していません";
-        console.log(firebase.auth())
       }
       const res = await firebase
         .auth()
